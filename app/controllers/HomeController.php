@@ -30,18 +30,20 @@ class HomeController extends BaseController
 
 		if (preg_match('/v5/', Cache::get('releases')))
 		{
-			$isOut = true;
-			$text = 'HELL YEAH! LARAVEL 5 IS OUT';
-		} else
-		{
-			$isOut = false;
-			$text = 'Nope :(';
+			return View::make('yes');
 		}
 
-		return View::make('isout')->with([
-			'isOut' => $isOut,
-			'text'  => $text,
-		]);
+		return View::make('no');
+	}
+
+	public function yes()
+	{
+		return View::make('yes');
+	}
+
+	public function no()
+	{
+		return View::make('no');
 	}
 
 }
