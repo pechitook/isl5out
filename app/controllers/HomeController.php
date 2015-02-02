@@ -2,9 +2,6 @@
 
 use Guzzle\Cache\DoctrineCacheAdapter;
 use Guzzle\Http\Client;
-use Guzzle\Plugin\Cache\CachePlugin;
-use Guzzle\Plugin\Cache\DefaultCacheStorage;
-use Doctrine\Common\Cache\FilesystemCache;
 
 class HomeController extends BaseController
 {
