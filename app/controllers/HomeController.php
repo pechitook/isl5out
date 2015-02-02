@@ -6,29 +6,42 @@ use Guzzle\Plugin\Cache\CachePlugin;
 use Guzzle\Plugin\Cache\DefaultCacheStorage;
 use Doctrine\Common\Cache\FilesystemCache;
 
-class HomeController extends BaseController {
+class HomeController extends BaseController
+{
 
 	/**
 	 * @var Client
 	 */
 	private $guzzle;
 
-	public function __construct(Client $guzzle){
+	public function __construct(Client $guzzle)
+	{
 
 		$this->guzzle = $guzzle;
 	}
 
-	public function yasalio()
+	public function isOut()
 	{
-		if (!Cache::has('releases')){
+		if (!Cache::has('releases'))
+		{
 			$response = $this->guzzle->get('https://github.com/laravel/framework/releases')->send();
-			Cache::put('releases', $response->getBody(true), 2);
+			Cache::put('releases', $response->getBody(true), 10);
 		}
 
-		if (preg_match('/v5/', Cache::get('releases'))){
-			die('SI');
+		if (preg_match('/v5/', Cache::get('releases')))
+		{
+			$isOut = true;
+			$text = 'HELL YEAH! LARAVEL 5 IS OUT';
+		} else
+		{
+			$isOut = false;
+			$text = 'Nope :(';
 		}
-		die('NO');
+
+		return View::make('isout')->with([
+			'isOut' => $isOut,
+			'text'  => $text,
+		]);
 	}
 
 }
