@@ -25,7 +25,7 @@ class HomeController extends BaseController
 		if (!Cache::has('releases'))
 		{
 			$response = $this->guzzle->get('https://github.com/laravel/framework/releases')->send();
-			Cache::put('releases', $response->getBody(true), 10);
+			Cache::put('releases', $response->getBody(true), 1);
 		}
 
 		if (preg_match('/v5/', Cache::get('releases')))
