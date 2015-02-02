@@ -29,5 +29,10 @@
     <body>
         <h1>{{$text}}</h1>
         <p>This is updated every minute. Keep this tab open :)</p>
+        <script>
+            setTimeout(function () {
+                if (location.reload) return location.reload();
+            }, 60000);
+        </script>
     </body>
 </html>
