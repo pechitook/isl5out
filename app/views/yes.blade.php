@@ -33,5 +33,9 @@
         <h2><a href="//laravel.com">Go check it out!</a></h2>
         <img src="http://media.giphy.com/media/dkGhBWE3SyzXW/giphy.gif" />
         <p style="margin-top: 40px;">Made with <span style="color:rgb(181, 64, 64)"><3</span> by <a href="//twitter.com/p4bloch" style="color:#aaa;text-decoration: none">@p4bloch</a></p>
+        <script>
+          var victory_sound = new Audio('victory.mp3');
+          victory_sound.play();
+        </script>
     </body>
 </html>
