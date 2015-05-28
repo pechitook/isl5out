@@ -4,9 +4,9 @@
         <meta charset="utf-8">
         <meta http-equiv="refresh" content="60">
         @if($isOut)
-        <title>YES! Laravel 5 was released!</title>
+        <title>YES! Laravel 5.1 was released!</title>
         @else
-        <title>No. Laravel 5 is not out yet</title>
+        <title>No. Laravel 5.1 is not out yet</title>
         @endif
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
