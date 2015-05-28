@@ -25,7 +25,7 @@ class HomeController extends BaseController
 			Cache::put('releases', $response->getBody(true), 1);
 		}
 
-		if (preg_match('/v5/', Cache::get('releases')))
+		if (preg_match('/v5.1', Cache::get('releases')))
 		{
 			return View::make('yes');
 		}
